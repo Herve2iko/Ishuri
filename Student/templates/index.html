@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block titre %}	kaze {% endblock %} </title>
+	<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.css' %}">
+</head>
+<body>
+	{%  block jumbotron %}
+	<div class="jumbotron text-center">
+		  <h1>KAZE kuri page yanje</h1>
+		  <p>Mwana ngaye</p>
+	</div>
+	{% endblock %}
+
+	{% block nav %}
+		<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <ul class="navbar-nav">
+  	<li class="nav-item active">
+  	<a class="nav-link" href="{% url 'home' %}">Home</a>
+  	</li>
+    <li class="nav-item active">
+      <a class="nav-link" href="{% url 'register' %}">Enregistrer student</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'addSchool' %}">Ajouter une Ecole</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'addClass' %}">Ajouter une Classe</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'deconnect' %}">Logout</a>
+    </li>
+  </ul>
+</nav>
+	{% endblock %}
+	{% block content %}
+
+	<strong>{{ text }}</strong><br>
+	<strong>{{ text2 }}</strong><br>
+	<strong>{{ nummber }}</strong><br>
+
+	<a class="btn btn-outline-primary" href="{% url 'profil' %}">Profil</a>
+	<a class="btn btn-outline-success" href="{% url 'register' %}">Enregistrer student</a>
+	<a class="btn btn-outline-danger" href="{% url 'addSchool' %}">Ajouter une Ecole</a>
+	<a class="btn btn-outline-primary" href="{% url 'addClass' %}">Ajouter une Classe</a>
+	<a class="btn btn-outline-primary" href="{% url 'deconnect' %}">Logout</a>
+
+	{% endblock %}
+
+	{% block footer %}
+
+		<footer>
+				<div class="container-fluid mt-5 bg-dark p-5">
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<p class="text-info">&copy; The CrewZ 2020</p>
+						</div>
+					</div>
+				</div>
+		</footer>
+
+	{% endblock %}
+
+</body>
+</html>
